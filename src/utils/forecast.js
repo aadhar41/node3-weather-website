@@ -12,7 +12,9 @@ const forecast = (lat, long, callback) => {
         } else {
             const currentTemp = body.current.temp_c;
             const text = body.current.condition.text;
-            callback(undefined, "It is currently " + currentTemp + " degrees out and " + text);
+            const wind_mph = body.current.wind_mph;
+            
+            callback(undefined, "It is currently " + currentTemp + " degrees out and " + text + '. Wind speed is ' + wind_mph + ' mph.');
         }
     })
 }
